@@ -2,7 +2,7 @@ window.onload = () => {
   const navbar = document.querySelector('.navbar');
   const navLinks = document.querySelectorAll('.navbar .nav-item > .nav-link:not(.signup)');
   const menuBtn = document.getElementById("menu-btn");
-  const collapseContent = document.getElementById("navbar");
+  const collapseContent = document.getElementById("navbarSupportedContent");
   const globeIcon = document.querySelector('.fa-globe');
   const userIcon = document.querySelector('.bx-user');
 
