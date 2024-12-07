@@ -15,3 +15,15 @@ body {
 .offwhite-bg-color {
   background-color: #fdfdfc;
 }
+
+.hover-bg:hover{
+  background-color: #ffe1c1;
+}
+.hover-bg:active, .hover-bg:focus {
+  background-color: #fe8909;
+  color: #fdfdfc;
+}
+
+.hover-bg:active svg, .hover-bg:focus svg {
+  fill: #fdfdfc;
+}
