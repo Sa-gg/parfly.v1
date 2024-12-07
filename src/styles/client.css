@@ -24,21 +24,16 @@ body {
 
 .navbar-brand {
     font-size: 1.5rem;
-} 
-
-
-.logo {
-    height: 80px;
-}
-
-.navbar-brand {
     font-weight: bold;
     font-style: italic;
     color: rgba(252,128,2,255);
-}
+} 
 
+.logo {
+    height: 80px;
+} 
 
-.navbar .dropdown-menu ul>li>a {
+.navbar .dropdown-menu ul > li > a {
     color: black;
 }
 
@@ -48,13 +43,12 @@ body {
 
 }
 
-
-.signup-item {
+.navbar .signup-item {
     background-color: rgba(252,128,2,255);
     border-radius: 6px;
     padding-inline: .7rem;
+    align-self: flex-start;
 }
-
 
 .navbar ul:last-of-type .nav-item{
     margin-right: 1.5rem;
@@ -66,21 +60,29 @@ body {
     color: white;
 }
 
-.fa-globe {
+.navbar .nav-item .fa-globe {
     font-size: 1.2rem;
     margin-right: .4rem;
     transition: color .3s ease;
 }
 
-.bx-user {
+.navbar .nav-item .bx-user {
     font-size: 1.6rem;
     margin-right: .4rem;
     transition: color .3s ease;
 }
 
+#menu-btn {
+  border-color: rgba(252,128,2,255);
+
+  }
+
+.navbar-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ffffff' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(252,128,2,255)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+  
 
 /* HOME */
-
 #home {
     background: linear-gradient(rgba(0, 0, 0, 0.333), rgba(0, 0, 0, 0.333)), 
                 url(../../assets/img/bg.jpg);
@@ -117,8 +119,6 @@ body {
     padding: .8rem 3rem;
     border: none;
 }
-
-
 
 @media screen and (max-width: 1393px) {
 
@@ -202,7 +202,6 @@ body {
 }
 
 /* SERVICES */
-
 #services {
     width: 100%;
     background-color: white;
@@ -232,8 +231,6 @@ body {
     transform: translateY(-10px);
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); 
   }
-  
-
 
 /* BOOKING */
 .booking-container {
@@ -241,7 +238,6 @@ body {
   margin: 0 auto; 
  
 }
-
 
 /* FOOTER */
 .text-orange{
