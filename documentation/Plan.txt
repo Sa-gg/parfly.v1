@@ -1,0 +1,24 @@
+Parfly
+
+
+#Nav Section
+Logo - Brand Name
+Business - Personal - Driver > Be a Partnered Driver > Fleet Manaegment - Services - About- Contact
+Location and Langauge - LogIn - Sign Up
+
+#Home Section
+BookNow
+ 
+#Services Section
+
+#Vehicles Section
+View Pricing Details
+
+#About Us Section
+Read More
+
+#Contact Us Section
+
+
+
+
