@@ -77,20 +77,99 @@
           </a>
         </li>
         <li>
-          <button type="button" class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover-bg" aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
-            <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 21">
-              <path d="M15 12a1 1 0 0 0 .962-.726l2-7A1 1 0 0 0 17 3H3.77L3.175.745A1 1 0 0 0 2.208 0H1a1 1 0 0 0 0 2h.438l.6 2.255v.019l2 7 .746 2.986A3 3 0 1 0 9 17a2.966 2.966 0 0 0-.184-1h2.368c-.118.32-.18.659-.184 1a3 3 0 1 0 3-3H6.78l-.5-2H15Z"/>
+          <button type="button" class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover-bg" aria-controls="new-delivery" data-collapse-toggle="new-delivery">
+            <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M20 8h-3V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h1a3 3 0 1 0 6 0h4a3 3 0 1 0 6 0h1a1 1 0 0 0 1-1v-5a1 1 0 0 0-.293-.707l-3-3A1 1 0 0 0 20 8ZM5 5h10v10H5V5Zm11 0h2v3h-2V5ZM8 18a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm10 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm-1-3h-6v-2h6v2Z"/>
             </svg>
             <span class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">Deliveries</span>
             <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
             </svg>
           </button>
-          <ul id="dropdown-example" class="hidden py-2 space-y-2">
+          <ul id="new-delivery" class="hidden py-2 space-y-2">
             <li>
-              <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover-bg">New Deliveries</a>
+              <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover-bg">New Delivery</a>
             </li>
           </ul>
+        </li>
+        <li>
+          <button type="button" class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover-bg" aria-controls="new-driver" data-collapse-toggle="new-driver">
+            <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 18a8 8 0 110-16 8 8 0 010 16zm0-10a2 2 0 100 4 2 2 0 000-4zm-4.24 4.24a2 2 0 112.83-2.83 2 2 0 01-2.83 2.83zm8.48 0a2 2 0 11-2.83-2.83 2 2 0 012.83 2.83zM12 6a2 2 0 100 4 2 2 0 000-4z"/>
+            </svg>
+            <span class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">Drivers</span>
+            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+            </svg>
+          </button>
+          <ul id="new-driver" class="hidden py-2 space-y-2">
+            <li>
+              <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover-bg">New Driver</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <button type="button" class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover-bg" aria-controls="new-customers" data-collapse-toggle="new-customers">
+            <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+            </svg>
+            <span class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">Customers</span>
+            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+            </svg>
+          </button>
+          <ul id="new-customers" class="hidden py-2 space-y-2">
+            <li>
+              <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover-bg">New Customer</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#" class="flex items-center p-2 text-black rounded-lg group hover-bg">
+            <svg class="w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2C10.343 2 9 3.343 9 5v1.07C6.165 7.165 4 9.672 4 12.5V17l-1 1v1h18v-1l-1-1v-4.5c0-2.828-2.165-5.335-5-6.43V5c0-1.657-1.343-3-3-3zm0 20c1.104 0 2-.896 2-2h-4c0 1.104.896 2 2 2z"/>
+            </svg>
+            <span class="ms-3">Notification</span>
+          </a>
+        </li>
+        <li>
+          <button type="button" class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover-bg" aria-controls="reportings" data-collapse-toggle="reportings">
+            <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M3 3v18h18V3H3zm16 16H5V5h14v14zM7 7h2v10H7V7zm4 4h2v6h-2v-6zm4-6h2v12h-2V5z"/>
+            </svg>
+            <span class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">Reportings</span>
+            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+            </svg>
+          </button>
+          <ul id="reportings" class="hidden py-2 space-y-2">
+            <li>
+              <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover-bg">Driver Reports</a>
+            </li>
+            <li>
+              <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover-bg">User Activities</a>
+            </li>
+            <li>
+              <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover-bg">Financial Reports</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#" class="flex items-center p-2 text-black rounded-lg group hover-bg">
+            <svg class="w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+              <path d="M19.43 12.98l1.77-1.77-1.41-1.41-1.77 1.77c-.36-.1-.74-.18-1.13-.23l-.3-1.9h-2.14l-.3 1.9c-.39.05-.77.13-1.13.23l-1.77-1.77-1.41 1.41 1.77 1.77c-.1.36-.18.74-.23 1.13l-1.9.3v2.14l1.9.3c.05.39.13.77.23 1.13l-1.77 1.77 1.41 1.41 1.77-1.77c.36.1.74.18 1.13.23l.3 1.9h2.14l.3-1.9c.39-.05.77-.13 1.13-.23l1.77 1.77 1.41-1.41-1.77-1.77c.1-.36.18-.74.23-1.13l1.9-.3v-2.14l-1.9-.3c-.05-.39-.13-.77-.23-1.13zM16 16c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
+            </svg>
+            <span class="ms-3">User Management</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="flex items-center p-2 text-black rounded-lg group hover-bg">
+            <svg class="w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M19.43 12.98l1.77-1.77-1.41-1.41-1.77 1.77c-.36-.1-.74-.18-1.13-.23l-.3-1.9h-2.14l-.3 1.9c-.39.05-.77.13-1.13.23l-1.77-1.77-1.41 1.41 1.77 1.77c-.1.36-.18.74-.23 1.13l-1.9.3v2.14l1.9.3c.05.39.13.77.23 1.13l-1.77 1.77 1.41 1.41 1.77-1.77c.36.1.74.18 1.13.23l.3 1.9h2.14l.3-1.9c.39-.05.77-.13 1.13-.23l1.77 1.77 1.41-1.41-1.77-1.77c.1-.36.18-.74.23-1.13l1.9-.3v-2.14l-1.9-.3c-.05-.39-.13-.77-.23-1.13zM16 16c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
+            </svg>
+            <span class="ms-3">Settings</span>
+          </a>
         </li>
       </ul>
     </div>

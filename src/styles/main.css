@@ -27,3 +27,7 @@ body {
 .hover-bg:active svg, .hover-bg:focus svg {
   fill: #fdfdfc;
 }
+
+.rotate-180 {
+  transform: rotate(180deg);
+}
