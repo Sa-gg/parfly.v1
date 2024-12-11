@@ -34,4 +34,3 @@ window.onload = () => {
       toggleNavbar(isTransparent);
     });
   };
-  
