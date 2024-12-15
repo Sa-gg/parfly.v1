@@ -11,13 +11,25 @@ BookNow
  
 #Services Section
 
-#Vehicles Section
-View Pricing Details
-
 #About Us Section
 Read More
 
+#Vehicles Section
+View Pricing Details
+
+#Download App
+
 #Contact Us Section
+
+
+!Business
+-  For businesses that want to outsource logistics, meaning they rely on a third-party provider (like Lalamove) to handle their deliveries and transportation of goods to customers.
+
+!Personal
+- For individual customers who need deliveries of their personal goods, such as ordering products for personal use or sending packages.
+
+
+
 
 
 
