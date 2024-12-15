@@ -233,9 +233,14 @@ body {
 
 
 #card-img-3 {
-    max-height: 232px;
-    max-width: 414px;
     object-fit: cover;
+}
+
+
+.card-img-top {
+    aspect-ratio: 643/360;
+    max-height: 538px;
+    max-width: 960px;
 }
 
 
@@ -259,3 +264,118 @@ body {
 .text-orange{
     color: rgba(252,128,2,255);
 }
+
+
+
+/* About */
+#about {
+    display: flex;
+    flex-direction: column;
+    padding-inline: 1vw;
+}
+
+.about-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+
+}
+
+.about-img img {
+    width: 500px;
+    border-radius: 10px;
+}
+
+.about-txt {
+    max-width: 600px;
+}
+
+@media screen and (max-width: 1155px) {
+    .about-txt {
+        text-align: center;
+    }
+
+    .about-img img {
+        width: 90vw;
+        max-width: 600px;
+    }
+    
+}
+
+
+/* Download App */
+
+
+#apps {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding-inline: 1vw;
+}
+
+.app-container {
+    margin-inline: auto;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    background-color: rgba(252,128,2,255);
+    padding: 3rem 6vw;
+    border-radius: 10px;
+}
+
+#mobile {
+    height: 40vw;
+    max-height: 400px;
+
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.dowload-btn {
+    height: 40px;
+}
+
+.dowload-btn.google {
+    height: 60px;
+}
+
+.app-text {
+    max-width: 600px;
+}
+
+#readmore-btn {
+    font-size: 1rem;
+    background-color: rgba(252,128,2,255);
+    padding: .5rem 1.5rem;
+    border: none;
+}
+
+
+@media screen and (max-width: 600px) {
+    .app-container {
+        flex-direction: column;
+    }
+
+    #mobile {
+        height: 500px;
+    }
+
+    .app-text {
+        text-align: center  ;
+    }
+
+    .buttons
+     {
+        justify-content: center;
+     }
+}
+
+
