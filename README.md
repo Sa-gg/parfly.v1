@@ -7,7 +7,7 @@ FOLDER GUIDE
 - includes project Front-End Main Page document
 
 #src
--includes all html, css, js files
+- includes all html, css, js files
 
 
 
