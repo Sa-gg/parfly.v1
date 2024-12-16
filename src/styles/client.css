@@ -31,10 +31,18 @@ body {
 
 .logo {
     height: 80px;
-} 
+}
+
+.navbar-brand:hover {
+    color: rgba(252,128,2,255);
+}
 
 .navbar .dropdown-menu ul > li > a {
     color: black;
+}
+
+.navbar .nav-item {
+    text-align: center;
 }
 
 .navbar .nav-item > .nav-link {
@@ -47,21 +55,34 @@ body {
     background-color: rgba(252,128,2,255);
     border-radius: 6px;
     padding-inline: .7rem;
-    align-self: flex-start;
+    align-self: center;
 }
 .navbar ul:first-of-type {
     padding-right: 2rem;
+}
+
+.navbar.navbar-collapse ul:first-of-type {
+    padding-right: 0;
 }
 
 .navbar ul:last-of-type .nav-item{
     margin-right: 1.5rem;
 }
 
+.navbar.navbar-collapse ul:last-of-type .nav-item{
+    margin-right: 0;
+}
+
+.navbar.navbar-collapse ul:last-of-type > .nav-item:first-child{
+   margin-bottom: .5rem;
+}
+
+
 .navbar ul:last-of-type .nav-item {
     display: flex;
     align-items: center;
+    justify-content: center;
     color: white;
-
 }
 
 .navbar ul:last-of-type .nav-item .nav-link {
@@ -78,7 +99,7 @@ body {
     font-size: 1.6rem;
     margin-right: .4rem;
     transition: color .3s ease;
-}
+} 
 
 #menu-btn {
   border-color: rgba(252,128,2,255);
@@ -96,14 +117,12 @@ body {
 }
 
 
-
-
 /* HOME */
 #home {
     background: linear-gradient(rgba(0, 0, 0, 0.333), rgba(0, 0, 0, 0.333)), 
                 url(../../assets/img/bg.jpg);
     background-size: cover;
-    min-height: 100vh;
+    height: 100vh;
     width: 100%;
     
 }
@@ -293,12 +312,17 @@ body {
 }
 
 @media screen and (max-width: 1155px) {
+    .about-txt p{
+        text-align: justify;
+    }
+
     .about-txt {
+        padding-inline: 3vw;
         text-align: center;
     }
 
     .about-img img {
-        width: 90vw;
+        width: 95vw;
         max-width: 600px;
     }
     
@@ -379,3 +403,59 @@ body {
 }
 
 
+/* BUSINESS PAGE */
+/* BUSINESS */
+
+#home.business {
+    height: 85vh;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+}
+
+
+.business-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: hidden;
+    padding-top: 12vw;
+    overflow: visible;
+    gap: 5vw;
+    flex-wrap: wrap;
+    padding-inline: 1vw;
+}
+
+.business-text {
+    color: white;
+    flex: 2;
+    max-width: 800px;
+}
+
+.business-form {
+    flex: 1;
+    max-width: 400px;
+}
+
+.business-text h2 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    
+}
+
+
+.business-text p {
+    font-size: 1.5rem;
+}
+
+
+#bs-services {
+    height: 100vh;
+}
+
+#deliver-btn {
+    font-size: 1.5rem;
+    background-color: rgba(252,128,2,255);
+    padding: .5rem 1.5rem;
+    border: none;
+}

@@ -33,12 +33,27 @@ window.onload = () => {
     }
   };
 
-  menuBtn.addEventListener("click", () => {
-    if (window.scrollY === 0 && !collapseContent.classList.contains("show")) {
-      toggleNavbar(navbar.classList.contains('bg-body-tertiary'));
-    }
-  });
+  let isClickAllowed = true;
 
+menuBtn.addEventListener("click", () => {
+  if (!isClickAllowed) return;
+
+  isClickAllowed = false;
+  setTimeout(() => {
+    isClickAllowed = true;
+  }, 400); // Adjust the delay interval as needed (500ms in this case)
+
+  if (window.scrollY === 0 && !collapseContent.classList.contains("show")) {
+    toggleNavbar(navbar.classList.contains('bg-body-tertiary'));
+  }
+
+  // const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+  // menuBtn.setAttribute('aria-expanded', !isExpanded);
+  // collapseContent.classList.toggle('show', !isExpanded);
+});
+
+
+  
   window.addEventListener('scroll', () => {
     const isTransparent = window.scrollY === 0 && !collapseContent.classList.contains("show");
     toggleNavbar(isTransparent);
