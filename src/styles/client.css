@@ -494,3 +494,35 @@ body {
         padding-top: 7rem;
     }
 }
+
+
+/* LOGIN */
+/* PAGE */
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+
+#login .btn {
+    background-color: transparent;
+    color: black;
+    border: 1px solid rgba(0, 0, 0, 0.366);
+}
+
+#login .btn.login-btn {
+    background-color: #fe8909;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+}
+
+#login .btn .fa-facebook-f {
+    color: blue;
+}
+
+#login .btn .fa-google {
+    color: red;
+}
