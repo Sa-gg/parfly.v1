@@ -31,10 +31,18 @@ body {
 
 .logo {
     height: 80px;
-} 
+}
+
+.navbar-brand:hover {
+    color: rgba(252,128,2,255);
+}
 
 .navbar .dropdown-menu ul > li > a {
     color: black;
+}
+
+.navbar .nav-item {
+    text-align: center;
 }
 
 .navbar .nav-item > .nav-link {
@@ -47,21 +55,34 @@ body {
     background-color: rgba(252,128,2,255);
     border-radius: 6px;
     padding-inline: .7rem;
-    align-self: flex-start;
+    align-self: center;
 }
 .navbar ul:first-of-type {
     padding-right: 2rem;
+}
+
+.navbar.navbar-collapse ul:first-of-type {
+    padding-right: 0;
 }
 
 .navbar ul:last-of-type .nav-item{
     margin-right: 1.5rem;
 }
 
+.navbar.navbar-collapse ul:last-of-type .nav-item{
+    margin-right: 0;
+}
+
+.navbar.navbar-collapse ul:last-of-type > .nav-item:first-child{
+   margin-bottom: .5rem;
+}
+
+
 .navbar ul:last-of-type .nav-item {
     display: flex;
     align-items: center;
+    justify-content: center;
     color: white;
-
 }
 
 .navbar ul:last-of-type .nav-item .nav-link {
@@ -78,7 +99,7 @@ body {
     font-size: 1.6rem;
     margin-right: .4rem;
     transition: color .3s ease;
-}
+} 
 
 #menu-btn {
   border-color: rgba(252,128,2,255);
@@ -96,14 +117,12 @@ body {
 }
 
 
-
-
 /* HOME */
 #home {
     background: linear-gradient(rgba(0, 0, 0, 0.333), rgba(0, 0, 0, 0.333)), 
                 url(../../assets/img/bg.jpg);
     background-size: cover;
-    min-height: 100vh;
+    height: 100vh;
     width: 100%;
     
 }
@@ -293,12 +312,17 @@ body {
 }
 
 @media screen and (max-width: 1155px) {
+    .about-txt p{
+        text-align: justify;
+    }
+
     .about-txt {
+        padding-inline: 3vw;
         text-align: center;
     }
 
     .about-img img {
-        width: 90vw;
+        width: 95vw;
         max-width: 600px;
     }
     
@@ -379,3 +403,126 @@ body {
 }
 
 
+/* BUSINESS PAGE */
+/* BUSINESS */
+
+#home.business {
+    height: 85vh;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+}
+
+
+.business-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: hidden;
+    padding-top: calc(12rem);
+    overflow: visible;
+    gap: 5vw;
+    padding-inline: 2vw;;
+}
+
+.business-text {
+    color: white;
+    flex: 2;
+    max-width: 800px;
+}
+
+.business-form {
+    flex: 1;
+    max-width: 400px;
+}
+
+.business-text h2 {
+    font-size: clamp(2rem, 3vw, 3.5rem);
+    font-weight: bold;
+    
+}
+
+.business-text p {
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+}
+
+
+#bs-services {
+    height: 100vh;
+}
+
+#deliver-btn {
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+    background-color: rgba(252,128,2,255);
+    padding: .5rem 1.5rem;
+    border: none;
+}
+
+
+@media screen and (max-width: 1150px) {
+    .business-text {
+        flex: 1;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .business-container {
+       flex-wrap: wrap;
+    } 
+
+    .business-text {
+        text-align: center;
+        padding: 5vw;
+    }
+
+    .business-text p {
+        text-align: justify;
+    }
+
+    .business-form {
+        min-width: 80vw;
+    }
+}
+
+
+@media screen and (max-height: 600px) {
+    #home.business {
+        height: 100vh;
+    }
+
+    .business-container {
+        padding-top: 7rem;
+    }
+}
+
+
+/* LOGIN */
+/* PAGE */
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+
+#login .btn {
+    background-color: transparent;
+    color: black;
+    border: 1px solid rgba(0, 0, 0, 0.366);
+}
+
+#login .btn.login-btn {
+    background-color: #fe8909;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+}
+
+#login .btn .fa-facebook-f {
+    color: blue;
+}
+
+#login .btn .fa-google {
+    color: red;
+}

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../../assets/favicon//favicon-16x16.png">
+    <script src="https://kit.fontawesome.com/1ef88bc824.js" crossorigin="anonymous"></script>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'> 
+	<link rel="manifest" href="../../assets/favicon/site.webmanifest">
+	<link rel="stylesheet" href="../../assets/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/src/styles/client.css">
+    <title>Business | Parfly</title>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <!-- NAVBAR -->
+        <nav id="navbar" class="navbar navbar-expand bg-transparent">
+            <div class="container-fluid">
+                <img src="../../assets/img/logo.png" class="logo" alt="Parfly Logo">
+                    <a class="navbar-brand" href="index.html">PARFLY</a>
+                    <button 
+                        id="menu-btn"
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="business.html">Business</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="personal.html">Personal</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link  dropdown-toggle" href="driver.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Driver
+                            </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Be a Partner Driver</a></li>
+                            <li><a class="dropdown-item" href="#">Fleet Management</a></li>
+                        </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#services">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <i class="fa-solid fa-globe"></i>
+                            <a  class="nav-link lang" href=""> Philippines - English</a>
+                        </li>
+                        <div class="d-flex align-items-center justify-content-center gap-4">
+							<li class="nav-item login-item">
+								<i class="bx bx-user"></i> 
+								<a class="nav-link login" href="login.html">Log In</a>
+							</li>
+
+							<li class="nav-item signup-item">
+								<a class="nav-link signup" href="">Sign Up</a>
+							</li>
+						</div>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+        <section id="home" class="business">
+            
+            <div class="business-container">
+                
+                <div class="business-text">
+                    <h2>Third-Party Logistics Partner for Enterprise Solutions</h2>
+                    <p>Parfly's third-party logistics (3PL) service empowers your enterprise to scale efficiently with comprehensive solutions for all your delivery needs.</p>
+                    <a href="" class="btn btn-primary btn-lg" id="deliver-btn">Deliver Now</a>
+
+            
+
+                </div>
+
+
+                <div class="business-form">
+
+                    <div class="container booking-container">
+                        <div class="card shadow p-3">
+                        <div class="card-body">
+                            <form action="">
+                            <div class="row">
+                                
+                                <div class="form-group mb-3 text-orange">
+                                    <label for="name"><b>Name</b></label>
+                                    <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                                </div>
+                                <div class="form-group mb-3 text-orange">
+                                    <label for="phone"><b>Phone Number</b></label>
+                                    <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number">
+                                </div>
+                                <div class="form-group mb-3 text-orange">
+                                    <label for="region"><b>Region</b></label>
+                                    <input type="text" class="form-control" id="region" placeholder="Enter your region">
+                                </div>
+                                <div class="form-group mb-3 text-orange">
+                                    <label for="phone"><b>Phone Number</b></label>
+                                    <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number">
+                                </div>
+                                <div class="form-group mb-3 text-orange">
+                                    <label for="email"><b>Email</b></label>
+                                    <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                                </div>
+                                <div class="form-group mb-3 text-orange">
+                                    <label for="name"><b>Industry</b></label>
+                                    <input type="text" class="form-control" id="Industry" placeholder="Describe your current Industry">
+                                </div>
+                                <div class="form-group mb-3 text-orange">
+                                    <label for="vehicle"><b>What type of delivery vehicle do you require most often？</b></label>
+                                    <input type="text" class="form-control" id="vehicle" placeholder="">
+                                </div>
+                                <div class="form-group mb-3 text-orange">
+                                    <label for="average\"><b>How many deliveries do you make on average per month?</b></label>
+                                    <input type="text" class="form-control" id="average" placeholder="">
+                                </div>
+                                <div class="form-group mb-3 text-orange">
+                                    <label for="bulk-delivery"><b>Do you require bulk order delivery (e.g. 50+ orders per day)？</b></label>
+                                    <input type="text" class="form-control" id="bulk-delivery" placeholder="">
+                                </div>
+                                <div class="form-group mb-3 text-orange">
+                                    <label for="duration"><b>How long does it usually take between placing a delivery order and pickup?</b></label>
+                                    <input type="text" class="form-control" id="duration" placeholder="">
+                                </div>
+                                <div class="form-group mb-3 text-orange">
+                                    <label for="preferences"><b>How would you prefer to place orders with Lalamove？
+                                    </b></label>
+                                    <input type="text" class="form-control" id="preferences" placeholder="">
+                                </div>
+                                
+                               
+                            </div>
+                            <div class="form-group mb-3 text-orange">
+                                <label for="requests"><b>Special Requests</b></label>
+                                <textarea class="form-control" id="requests" rows="3" placeholder="Enter any special requests"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100" id="book-btn"><b>Submit</b></button>
+                            </form>
+                        </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+        </section>
+
+
+        <section id="bs-services">
+
+            
+        </section>
+        
+
+    </main>
+        
+    <!-- FOOTER -->
+    <footer>
+        
+    </footer>
+
+
+
+    <script src="../../assets/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/src/script/client.js"></script>
+</body>
+</html>
