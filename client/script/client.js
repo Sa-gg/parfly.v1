@@ -36,15 +36,7 @@ function initializeNavbar() {
   };
 
   // Menu button click handler  
-  let isClickAllowed = true;
   menuBtn.addEventListener("click", () => {
-    if (!isClickAllowed) return;
-
-    isClickAllowed = false;
-    setTimeout(() => {
-      isClickAllowed = true;
-    }, 400); // Adjust the delay interval as needed (400ms in this case)
-
     if (window.scrollY === 0 && !collapseContent.classList.contains("show")) {
       toggleNavbar(navbar.classList.contains('bg-body-tertiary'));
     }
@@ -72,5 +64,6 @@ function initializeBusinessPage() {
 }
 
 window.onload = () => {
+  initializeNavbar();
   initializePageSpecificJS();
 };
