@@ -21825,13 +21825,13 @@ fieldset:disabled .btn {
 
 .btn-success:hover,
 .btn.bg-gradient-success:hover {
-  background-color: #22c55e;
-  border-color: #22c55e;
+  background-color: #fc902b;
+  border-color: #fc902b;
 }
 
 .btn-success .btn.bg-outline-success,
 .btn.bg-gradient-success .btn.bg-outline-success {
-  border: 1px solid #22c55e;
+  border: 1px solid #fc902b;
 }
 
 .btn-success:not(:disabled):not(.disabled).active,
@@ -21840,8 +21840,8 @@ fieldset:disabled .btn {
 .btn.bg-gradient-success:not(:disabled):not(.disabled).active,
 .btn.bg-gradient-success:not(:disabled):not(.disabled):active,
 .show>.btn.bg-gradient-success.dropdown-toggle {
-  color: color-yiq(#22c55e);
-  background-color: #22c55e;
+  color: color-yiq(#fc902b);
+  background-color: #fc902b;
 }
 
 .btn-success.focus,
@@ -21859,7 +21859,7 @@ fieldset:disabled .btn {
   background-color: transparent;
   opacity: 0.75;
   box-shadow: none;
-  color: #22c55e;
+  color: #fc902b;
 }
 
 .btn-info:hover,
@@ -23031,7 +23031,7 @@ label,
 }
 
 .bg-gradient-success {
-  background-image: linear-gradient(310deg, #22c55e 0%, #98ec2d 100%);
+  background-image: linear-gradient(310deg, #fc9871 0%, #fc902b 100%);
 }
 
 .bg-gradient-info {
@@ -23822,7 +23822,7 @@ html {
 
 .navbar-vertical .navbar-brand>img,
 .navbar-vertical .navbar-brand-img {
-  max-width: 50px;
+  max-width: 60px;
 }
 
 .navbar-vertical .navbar-nav {
