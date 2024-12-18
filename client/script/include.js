@@ -19,10 +19,10 @@ function includeHTML() {
 document.addEventListener('DOMContentLoaded', includeHTML);
 
 function initializePageSpecificJS() {
-  // Add your page-specific JavaScript initialization here
-  if (window.location.pathname.includes('business.html')) {
+  const bodyId = document.body.id;
+  if (bodyId === 'business-page') {
     initializeBusinessPage();
-  } else if (window.location.pathname.includes('index.html')) {
+  } else if (bodyId === 'index-page') {
     initializeIndexPage();
   }
 }
