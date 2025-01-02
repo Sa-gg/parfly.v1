@@ -26,7 +26,7 @@ body {
     font-size: 1.5rem;
     font-weight: bold;
     font-style: italic;
-    color: rgba(252,128,2,255);
+    color: #FC8002;
 } 
 
 .logo {
@@ -34,7 +34,7 @@ body {
 }
 
 .navbar-brand:hover {
-    color: rgba(252,128,2,255);
+    color: #FC8002;
 }
 
 .navbar .dropdown-menu ul > li > a {
