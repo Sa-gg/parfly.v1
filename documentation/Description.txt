@@ -1,4 +1,4 @@
-# Parfly Web Application
+# Parfly Web Application (CLIENT)
 
 ## Overview
 Parfly is a comprehensive delivery platform designed to connect businesses and individuals with drivers for fast and reliable delivery services. The platform aims to streamline the logistics process, making it easier for users to manage and track their deliveries.
@@ -8,7 +8,6 @@ Parfly is a comprehensive delivery platform designed to connect businesses and i
 - **Personal Deliveries:** Individuals can use Parfly to send personal packages or order products for personal use.
 - **Driver Partnership:** Parfly provides opportunities for drivers to partner with the platform and earn by delivering packages.
 - **Fleet Management:** Businesses can manage their fleet of vehicles and drivers through Parfly's fleet management system.
-- **Referral Program:** Parfly offers a referral program for drivers to earn rewards by referring other drivers to the platform.
 
 ## Navigation Sections
 
@@ -16,7 +15,7 @@ Parfly is a comprehensive delivery platform designed to connect businesses and i
 - **Logo & Brand Name:** Represents the Parfly brand and provides a link to the home page.
 - **Business:** Provides information and services for business users who want to outsource their logistics.
 - **Personal:** Offers delivery services for individual customers.
-- **Driver:** Contains options for drivers to partner with Parfly, manage their fleet, and participate in the referral program.
+- **Driver:** Contains options for drivers to partner with Parfly and manage their fleet.
 - **Services:** Lists the various services offered by Parfly.
 - **About:** Provides information about Parfly, its mission, and its team.
 - **Contact:** Contains contact information and a form for users to get in touch with Parfly.
