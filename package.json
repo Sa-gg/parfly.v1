@@ -1,0 +1,20 @@
+{
+  "name": "parfly-admin-last",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "npx tailwindcss -i ./admin/src/assets/css/styles.css -o ./admin/dist/output.css --watch",
+    "build": "npm run build:css && <your-build-command>"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "apexcharts": "^4.3.0",
+    "autoprefixer": "^10.4.20",
+    "flowbite": "^2.5.2",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17"
+  }
+}

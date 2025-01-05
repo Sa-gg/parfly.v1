@@ -1,9 +1,44 @@
-### Example user template template
-### Example user template
-
 # IntelliJ project files
 .idea
 *.iml
 out
 gen
+
+# Node modules
+node_modules/
+
+# Tailwind CSS config
 tailwind.config.js
+
+# # Build artifacts
+# admin/dist/
+# client/assets/bootstrap-5.3.3-dist/
+# client/assets/favicon/
+# client/assets/img/
+# client/script/
+# client/styles/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+
+# Temporary files
+*.tmp
+*.temp
+
+# VS Code settings
+.vscode/
+
+# Ignore specific files in the documentation folder
+documentation/*.log
+documentation/*.tmp

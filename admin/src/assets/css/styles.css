@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#charts {
+    width: 100%; 
+    gap: 10px;
+    justify-content: center; 
+    align-content: flex-start; 
+    flex-wrap: wrap; 
+    margin-bottom: 2rem;
+
+}
+
+#charts > div {
+    height: auto;
+    max-width: 300px;
+    flex: 0 1 300px;
+}
