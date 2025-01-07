@@ -17,3 +17,17 @@
     max-width: 300px;
     flex: 0 1 300px;
 }
+
+.active-menu a{
+    background: #FC8002 !important;
+    color: #fff !important;
+
+    svg {
+        color: #fff !important;
+    }
+}
+
+.custom-select:hover {
+    background-color: #FC8002 !important;
+    color: white !important;
+}

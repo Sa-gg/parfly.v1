@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Financial | Admin</title>
+  <!-- Flowbite CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+  <!-- Tailwind CSS -->
+  <link href="/admin/dist/output.css" rel="stylesheet">
+</head>
+
+<body class="font-poppins">
+  <div class="antialiased bg-gray-50 dark:bg-gray-900">
+    <!-- Header -->
+    <nav
+      class="bg-white border-b border-gray-200 px-4 py-2.5 dark:bg-gray-800 dark:border-gray-700 fixed left-0 right-0 top-0 z-50">
+      <div class="flex flex-wrap justify-between items-center">
+        <div class="flex justify-start items-center">
+          <button data-drawer-target="drawer-navigation" data-drawer-toggle="drawer-navigation"
+            aria-controls="drawer-navigation"
+            class="p-2 mr-2 text-gray-600 rounded-lg cursor-pointer lg:hidden hover:text-white hover:bg-gray-100 focus:bg-gray-100 dark:focus:bg-gray-700 focus:ring-2 focus:ring-gray-100 dark:focus:ring-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+            <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                clip-rule="evenodd"></path>
+            </svg>
+            <svg aria-hidden="true" class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                clip-rule="evenodd"></path>
+            </svg>
+            <span class="sr-only">Toggle sidebar</span>
+          </button>
+          <a href="/client/index.html" class="flex items-center justify-between mr-4">
+            <img src="/admin/src/assets/img/logo.png" class="mr-3 h-12" alt="Parfly Logo" />
+            <span
+              class="self-center text-2xl font-semibold whitespace-nowrap text-[#FC8002] dark:text-white hidden sm:block">Parfly</span>
+          </a>
+          <form action="#" method="GET" class="hidden lg:block lg:pl-2">
+            <label for="topbar-search" class="sr-only">Search</label>
+            <div class="text-gray-500 relative lg:w-64 lg:w-96">
+              <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z">
+                  </path>
+                </svg>
+              </div>
+              <input type="text" name="email" id="topbar-search"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#FC8002] focus:border-[#FC8002] block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-[ dark:focus:border-primary-500"
+                placeholder="Search" />
+            </div>
+          </form>
+        </div>
+        <div class="flex items-center lg:order-2">
+          <button type="button" data-drawer-toggle="drawer-navigation" aria-controls="drawer-navigation"
+            class="p-2 mr-1 text-gray-500 rounded-lg lg:hidden hover:text-[#FC8002] hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700 focus:ring-4 focus:ring-[#fc7f0281] dark:focus:ring-gray-600">
+            <span class="sr-only">Toggle search</span>
+            <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path clip-rule="evenodd" fill-rule="evenodd"
+                d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z">
+              </path>
+            </svg>
+          </button>
+          <!-- Notifications -->
+          <button type="button" data-dropdown-toggle="notification-dropdown"
+            class="p-2 mr-1 text-gray-500 rounded-lg hover:text-[#FC8002] hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700 focus:ring-4 focus:ring-[#fc7f0281] dark:focus:ring-gray-600">
+            <span class="sr-only">View notifications</span>
+            <!-- Bell icon -->
+            <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z">
+              </path>
+            </svg>
+          </button>
+          <!-- Dropdown menu -->
+          <div
+            class="hidden overflow-hidden z-50 my-4 max-w-sm text-base list-none bg-white rounded divide-y divide-gray-100 shadow-lg dark:divide-gray-600 dark:bg-gray-700 rounded-xl"
+            id="notification-dropdown">
+            <div
+              class="block py-2 px-4 text-base font-medium text-center text-gray-700 bg-gray-50 dark:bg-gray-600 dark:text-gray-300">
+              Notifications
+            </div>
+            <div>
+              <a href="/admin/src/notifications.html"
+                class="flex py-3 px-4 border-b hover:bg-gray-100 dark:hover:bg-gray-600 dark:border-gray-600">
+                <div class="flex-shrink-0">
+                  <img class="w-11 h-11 rounded-full" src="/admin/src/assets/img/people/haerin.jpg"
+                    alt="Haerin avatar" />
+                </div>
+                <div class="pl-3 w-full">
+                  <div class="text-gray-500 font-normal text-sm mb-1.5 dark:text-gray-400">
+
+                    <span class="font-semibold text-gray-900 dark:text-white">Haerin</span>: "Requested a delivery"
+                  </div>
+                  <div class="text-xs font-medium text-primary-600 dark:text-primary-500">
+                    a few moments ago
+                  </div>
+                </div>
+              </a>
+              <a href="/admin/src/notifications.html"
+                class="flex py-3 px-4 border-b hover:bg-gray-100 dark:hover:bg-gray-600 dark:border-gray-600">
+                <div class="flex-shrink-0">
+                  <img class="w-11 h-11 rounded-full" src="/admin/src/assets/img/people/hanni.jpg" alt="hanni avatar" />
+                </div>
+                <div class="pl-3 w-full">
+                  <div class="text-gray-500 font-normal text-sm mb-1.5 dark:text-gray-400">
+                    <span class="font-semibold text-gray-900 dark:text-white">Hanni</span>
+                    : "Placed an order"
+                  </div>
+                  <div class="text-xs font-medium text-primary-600 dark:text-primary-500">
+                    10 minutes ago
+                  </div>
+                </div>
+              </a>
+              <a href="/admin/src/notifications.html"
+                class="flex py-3 px-4 border-b hover:bg-gray-100 dark:hover:bg-gray-600 dark:border-gray-600">
+                <div class="flex-shrink-0">
+                  <img class="w-11 h-11 rounded-full" src="/admin/src/assets/img/people/hyein.jpg" alt="Hyein avatar" />
+                </div>
+                <div class="pl-3 w-full">
+                  <div class="text-gray-500 font-normal text-sm mb-1.5 dark:text-gray-400">
+                    <span class="font-semibold text-gray-900 dark:text-white">Hyein</span>
+                    : "Completed a delivery"
+                  </div>
+                  <div class="text-xs font-medium text-primary-600 dark:text-primary-500">
+                    44 minutes ago
+                  </div>
+                </div>
+              </a>
+              <a href="/admin/src/notifications.html"
+                class="flex py-3 px-4 border-b hover:bg-gray-100 dark:hover:bg-gray-600 dark:border-gray-600">
+                <div class="flex-shrink-0">
+                  <img class="w-11 h-11 rounded-full" src="/admin/src/assets/img/people/danielle.jpg"
+                    alt="Danielle avatar" />
+                </div>
+                <div class="pl-3 w-full">
+                  <div class="text-gray-500 font-normal text-sm mb-1.5 dark:text-gray-400">
+                    <span class="font-semibold text-gray-900 dark:text-white">Danielle</span>
+                    : "Left a review"
+                  </div>
+                  <div class="text-xs font-medium text-primary-600 dark:text-primary-500">
+                    1 hour ago
+                  </div>
+                </div>
+              </a>
+              <a href="/admin/src/notifications.html" class="flex py-3 px-4 hover:bg-gray-100 dark:hover:bg-gray-600">
+                <div class="flex-shrink-0">
+                  <img class="w-11 h-11 rounded-full" src="/admin/src/assets/img/people/minji.jpg" alt="Minji image" />
+                </div>
+                <div class="pl-3 w-full">
+                  <div class="text-gray-500 font-normal text-sm mb-1.5 dark:text-gray-400">
+                    <span class="font-semibold text-gray-900 dark:text-white">Minji</span>
+                    : "Requested a refund"
+                  </div>
+                  <div class="text-xs font-medium text-primary-600 dark:text-primary-500">
+                    3 hours ago
+                  </div>
+                </div>
+              </a>
+            </div>
+            <a href="/admin/src/notifications.html"
+              class="block py-2 text-md font-medium text-center text-gray-900 bg-gray-50 hover:bg-gray-100 dark:bg-gray-600 dark:text-white dark:hover:underline">
+              <div class="inline-flex items-center">
+                <svg aria-hidden="true" class="mr-2 w-4 h-4 text-white dark:text-gray-400" fill="currentColor"
+                  viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
+                  <path fill-rule="evenodd"
+                    d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                View all
+              </div>
+            </a>
+          </div>
+          <!-- Apps -->
+          <button type="button" data-dropdown-toggle="apps-dropdown"
+            class="p-2 text-gray-500 rounded-lg hover:text-[#FC8002] hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700 focus:ring-4 focus:ring-[#fc7f0281] dark:focus:ring-gray-600">
+            <span class="sr-only">View notifications</span>
+            <!-- Icon -->
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z">
+              </path>
+            </svg>
+          </button>
+          <!-- Dropdown menu -->
+          <div
+            class="hidden overflow-hidden z-50 my-4 max-w-sm text-base list-none bg-white rounded divide-y divide-gray-100 shadow-lg dark:bg-gray-700 dark:divide-gray-600 rounded-xl"
+            id="apps-dropdown">
+            <div
+              class="block py-2 px-4 text-base font-medium text-center text-gray-700 bg-gray-50 dark:bg-gray-600 dark:text-gray-300">
+              Apps
+            </div>
+            <div class="grid grid-cols-3 gap-4 p-4">
+              <a href="/admin/src/settings.html"
+                class="block p-4 text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 group">
+                <svg aria-hidden="true"
+                  class="mx-auto mb-1 w-7 h-7 text-gray-400 group-hover:text-[#FC8002]  dark:text-gray-400 dark:group-hover:text-gray-400"
+                  fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd"
+                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                <div class="text-sm text-gray-900 dark:text-white">
+                  Profile
+                </div>
+              </a>
+              <a href="/admin/src/settings.html"
+                class="block p-4 text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 group">
+                <svg aria-hidden="true"
+                  class="mx-auto mb-1 w-7 h-7 text-gray-400 group-hover:text-[#FC8002]  dark:text-gray-400 dark:group-hover:text-gray-400"
+                  fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd"
+                    d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                <div class="text-sm text-gray-900 dark:text-white">
+                  Settings
+                </div>
+                <a href="/admin/src/login.html"
+                  class="block p-4 text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 group">
+                  <svg aria-hidden="true"
+                    class="mx-auto mb-1 w-7 h-7 text-gray-400 group-hover:text-[#FC8002]  dark:text-gray-400 dark:group-hover:text-gray-400"
+                    fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1">
+                    </path>
+                  </svg>
+                  <div class="text-sm text-gray-900 dark:text-white">
+                    Logout
+                  </div>
+                </a>
+            </div>
+          </div>
+          <button type="button"
+            class="flex mx-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-[#fc7f0281] dark:focus:ring-gray-600"
+            id="user-menu-button" aria-expanded="false" data-dropdown-toggle="dropdown">
+            <span class="sr-only">Open user menu</span>
+            <img class="w-8 h-8 rounded-full" src="/admin/src/assets/img/people/vanessa.jpg" alt="user photo" />
+          </button>
+          <!-- Dropdown menu -->
+          <div
+            class="hidden z-50 my-4 w-56 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600 rounded-xl"
+            id="dropdown">
+            <div class="py-3 px-4">
+              <span class="block text-sm font-semibold text-gray-900 dark:text-white">Vanessa</span>
+              <span class="block text-sm text-gray-900 truncate dark:text-white">vanessa@gmail.com</span>
+            </div>
+            <ul class="py-1 text-gray-700 dark:text-gray-300" aria-labelledby="dropdown">
+              <li>
+                <a href="/admin/src/settings.html"
+                  class="block py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white">My
+                  profile</a>
+              </li>
+              <li>
+                <a href="/admin/src/settings.html"
+                  class="block py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white">Account
+                  settings</a>
+              </li>
+            </ul>
+            <ul class="py-1 text-gray-700 dark:text-gray-300" aria-labelledby="dropdown">
+              <li>
+                <a href="/admin/src/login.html"
+                  class="block py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign
+                  out</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- START Sidebar -->
+    <aside
+      class="fixed top-0 left-0 z-40 w-64 h-screen pt-14 transition-transform -translate-x-full bg-white border-r border-gray-200 lg:translate-x-0 dark:bg-gray-800 dark:border-gray-700"
+      aria-label="Sidenav" id="drawer-navigation">
+      <div class="overflow-y-auto py-5 px-3 h-full bg-white dark:bg-gray-800">
+        <form action="#" method="GET" class="md:hidden mb-2">
+          <label for="sidebar-search" class="sr-only">Search</label>
+          <div class="relative">
+            <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+              <svg class="w-5 h-5 text-white dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z">
+                </path>
+              </svg>
+            </div>
+            <input type="text" name="search" id="sidebar-search"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+              placeholder="Search" />
+          </div>
+        </form>
+        <ul class="space-y-2">
+          <li>
+            <a href="/admin/src/dashboard.html"
+              class="flex items-center p-2 text-base font-medium text-gray-900 rounded-lg dark:text-white hover:bg-[#FC8002] hover:text-white group">
+              <svg aria-hidden="true"
+                class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-white"
+                fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
+                <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
+              </svg>
+              <span class="ml-3">Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="/admin/src/deliveries.html"
+              class="flex items-center p-2 text-base font-medium text-gray-900 rounded-lg dark:text-white hover:bg-[#FC8002] hover:text-white group">
+              <svg aria-hidden="true"
+                class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-white"
+                fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+
+                <path
+                  d="M3.375 4.5C2.339 4.5 1.5 5.34 1.5 6.375V13.5h12V6.375c0-1.036-.84-1.875-1.875-1.875h-8.25ZM13.5 15h-12v2.625c0 1.035.84 1.875 1.875 1.875h.375a3 3 0 1 1 6 0h3a.75.75 0 0 0 .75-.75V15Z" />
+                <path
+                  d="M8.25 19.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0ZM15.75 6.75a.75.75 0 0 0-.75.75v11.25c0 .087.015.17.042.248a3 3 0 0 1 5.958.464c.853-.175 1.522-.935 1.464-1.883a18.659 18.659 0 0 0-3.732-10.104 1.837 1.837 0 0 0-1.47-.725H15.75Z" />
+                <path d="M19.5 19.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z" />
+              </svg>
+              <span class="ml-3">Deliveries</span>
+            </a>
+          </li>
+          <li>
+            <a href="/admin/src/drivers.html"
+              class="flex items-center p-2 text-base font-medium text-gray-900 rounded-lg dark:text-white hover:bg-[#FC8002] hover:text-white group">
+              <svg aria-hidden="true"
+                class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-white"
+                fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M4.5 6.375a4.125 4.125 0 1 1 8.25 0 4.125 4.125 0 0 1-8.25 0ZM14.25 8.625a3.375 3.375 0 1 1 6.75 0 3.375 3.375 0 0 1-6.75 0ZM1.5 19.125a7.125 7.125 0 0 1 14.25 0v.003l-.001.119a.75.75 0 0 1-.363.63 13.067 13.067 0 0 1-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 0 1-.364-.63l-.001-.122ZM17.25 19.128l-.001.144a2.25 2.25 0 0 1-.233.96 10.088 10.088 0 0 0 5.06-1.01.75.75 0 0 0 .42-.643 4.875 4.875 0 0 0-6.957-4.611 8.586 8.586 0 0 1 1.71 5.157v.003Z" />
+              </svg>
+              <span class="ml-3">Drivers</span>
+            </a>
+          </li>
+          <li>
+            <a href="/admin/src/customers.html"
+              class="flex items-center p-2 text-base font-medium text-gray-900 rounded-lg dark:text-white hover:bg-[#FC8002] hover:text-white group">
+              <svg aria-hidden="true"
+                class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-white"
+                fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M4.5 6.375a4.125 4.125 0 1 1 8.25 0 4.125 4.125 0 0 1-8.25 0ZM14.25 8.625a3.375 3.375 0 1 1 6.75 0 3.375 3.375 0 0 1-6.75 0ZM1.5 19.125a7.125 7.125 0 0 1 14.25 0v.003l-.001.119a.75.75 0 0 1-.363.63 13.067 13.067 0 0 1-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 0 1-.364-.63l-.001-.122ZM17.25 19.128l-.001.144a2.25 2.25 0 0 1-.233.96 10.088 10.088 0 0 0 5.06-1.01.75.75 0 0 0 .42-.643 4.875 4.875 0 0 0-6.957-4.611 8.586 8.586 0 0 1 1.71 5.157v.003Z" />
+              </svg>
+              <span class="ml-3">Customers</span>
+            </a>
+          </li>
+          <li>
+            <a href="/admin/src/notifications.html"
+              class="flex items-center p-2 text-base font-medium text-gray-900 rounded-lg dark:text-white hover:bg-[#FC8002] hover:text-white group">
+              <svg aria-hidden="true"
+                class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-white"
+                fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                  d="M5.25 9a6.75 6.75 0 0 1 13.5 0v.75c0 2.123.8 4.057 2.118 5.52a.75.75 0 0 1-.297 1.206c-1.544.57-3.16.99-4.831 1.243a3.75 3.75 0 1 1-7.48 0 24.585 24.585 0 0 1-4.831-1.244.75.75 0 0 1-.298-1.205A8.217 8.217 0 0 0 5.25 9.75V9Zm4.502 8.9a2.25 2.25 0 1 0 4.496 0 25.057 25.057 0 0 1-4.496 0Z"
+                  clip-rule="evenodd" />
+              </svg>
+              <span class="flex-1 ml-3 whitespace-nowrap">Notifications</span>
+              <span
+                class="inline-flex justify-center items-center w-5 h-5 text-xs font-semibold rounded-full text-primary-800 bg-primary-100 dark:bg-primary-200 dark:text-primary-800">
+                23
+              </span>
+            </a>
+          </li>
+        </ul>
+        <ul class="pt-5 mt-5 space-y-2 border-t border-gray-200 dark:border-gray-700">
+          <li>
+            <button type="button"
+              class="flex items-center p-2 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-[#FC8002] dark:text-white dark:hover:bg-gray-700 hover:text-white"
+              aria-controls="dropdown-authentication" data-collapse-toggle="dropdown-authentication">
+              <svg aria-hidden="true"
+                class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-white dark:text-gray-400 dark:group-hover:text-white"
+                fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                  d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span class="flex-1 ml-3 text-left whitespace-nowrap">Reportings</span>
+              <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </button>
+            <ul id="dropdown-authentication" class="hidden py-2 space-y-2">
+              <!-- <li>
+                <a href="/admin/src/driverReports.html"
+                  class="flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Driver
+                  Reports</a>
+              </li> -->
+              <li class="active-menu">
+                <a href="/admin/src/financialReports.html"
+                  class="flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Financial
+                  Reports</a>
+              </li>
+            </ul>
+          <li>
+            <a href="/admin/src/userManagement.html"
+              class="flex items-center p-2 text-base font-medium text-gray-900 rounded-lg dark:text-white hover:bg-[#FC8002] hover:text-white group">
+              <svg aria-hidden="true"
+                class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-white"
+                fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                  d="M8.25 6.75a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0ZM15.75 9.75a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM2.25 9.75a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM6.31 15.117A6.745 6.745 0 0 1 12 12a6.745 6.745 0 0 1 6.709 7.498.75.75 0 0 1-.372.568A12.696 12.696 0 0 1 12 21.75c-2.305 0-4.47-.612-6.337-1.684a.75.75 0 0 1-.372-.568 6.787 6.787 0 0 1 1.019-4.38Z"
+                  clip-rule="evenodd" />
+                <path
+                  d="M5.082 14.254a8.287 8.287 0 0 0-1.308 5.135 9.687 9.687 0 0 1-1.764-.44l-.115-.04a.563.563 0 0 1-.373-.487l-.01-.121a3.75 3.75 0 0 1 3.57-4.047ZM20.226 19.389a8.287 8.287 0 0 0-1.308-5.135 3.75 3.75 0 0 1 3.57 4.047l-.01.121a.563.563 0 0 1-.373.486l-.115.04c-.567.2-1.156.349-1.764.441Z" />
+              </svg>
+              <span class="ml-3">User Management</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/Sa-gg/parfly"
+              class="flex items-center p-2 text-base font-medium text-gray-900 rounded-lg transition duration-75 hover:bg-[#FC8002] dark:hover:bg-gray-700 dark:text-white group hover:text-white">
+              <svg aria-hidden="true"
+                class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-white dark:group-hover:text-white"
+                fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                  d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-2 0c0 .993-.241 1.929-.668 2.754l-1.524-1.525a3.997 3.997 0 00.078-2.183l1.562-1.562C15.802 8.249 16 9.1 16 10zm-5.165 3.913l1.58 1.58A5.98 5.98 0 0110 16a5.976 5.976 0 01-2.516-.552l1.562-1.562a4.006 4.006 0 001.789.027zm-4.677-2.796a4.002 4.002 0 01-.041-2.08l-.08.08-1.53-1.533A5.98 5.98 0 004 10c0 .954.223 1.856.619 2.657l1.54-1.54zm1.088-6.45A5.974 5.974 0 0110 4c.954 0 1.856.223 2.657.619l-1.54 1.54a4.002 4.002 0 00-2.346.033L7.246 4.668zM12 10a2 2 0 11-4 0 2 2 0 014 0z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span class="ml-3">Help</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div
+        class="hidden absolute bottom-0 left-0 justify-center p-4 space-x-4 w-full lg:flex bg-white dark:bg-gray-800 z-20">
+        <a href="#"
+          class="inline-flex justify-center p-2 text-gray-500 rounded cursor-pointer dark:text-gray-400 hover:text-[#FC8002] dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-600">
+          <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M5 4a1 1 0 00-2 0v7.268a2 2 0 000 3.464V16a1 1 0 102 0v-1.268a2 2 0 000-3.464V4zM11 4a1 1 0 10-2 0v1.268a2 2 0 000 3.464V16a1 1 0 102 0V8.732a2 2 0 000-3.464V4zM16 3a1 1 0 011 1v7.268a2 2 0 010 3.464V16a1 1 0 11-2 0v-1.268a2 2 0 010-3.464V4a1 1 0 011-1z">
+            </path>
+          </svg>
+        </a>
+        <a href="/admin/src/settings.html" data-tooltip-target="tooltip-settings"
+          class="inline-flex justify-center p-2 text-gray-500 rounded cursor-pointer dark:text-gray-400 dark:hover:text-white hover:text-[#FC8002] hover:bg-gray-100 dark:hover:bg-gray-600">
+          <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+              d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </a>
+        <div id="tooltip-settings" role="tooltip"
+          class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip">
+          Settings page
+          <div class="tooltip-arrow" data-popper-arrow></div>
+        </div>
+        <button type="button" data-dropdown-toggle="language-dropdown"
+          class="inline-flex justify-center p-2 text-white rounded cursor-pointer dark:hover:text-white dark:text-gray-400 hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-600">
+          <svg aria-hidden="true" class="h-5 w-5 rounded-full mt-0.5" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 3900 3900">
+            <path fill="#b22234" d="M0 0h7410v3900H0z" />
+            <path d="M0 450h7410m0 600H0m0 600h7410m0 600H0m0 600h7410m0 600H0" stroke="#fff" stroke-width="300" />
+            <path fill="#3c3b6e" d="M0 0h2964v2100H0z" />
+            <g fill="#fff">
+              <g id="d">
+                <g id="c">
+                  <g id="e">
+                    <g id="b">
+                      <path id="a" d="M247 90l70.534 217.082-184.66-134.164h228.253L176.466 307.082z" />
+                      <use xlink:href="#a" y="420" />
+                      <use xlink:href="#a" y="840" />
+                      <use xlink:href="#a" y="1260" />
+                    </g>
+                    <use xlink:href="#a" y="1680" />
+                  </g>
+                  <use xlink:href="#b" x="247" y="210" />
+                </g>
+                <use xlink:href="#c" x="494" />
+              </g>
+              <use xlink:href="#d" x="988" />
+              <use xlink:href="#c" x="1976" />
+              <use xlink:href="#e" x="2470" />
+            </g>
+          </svg>
+        </button>
+        <!-- Dropdown -->
+        <div
+          class="hidden z-50 my-4 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700"
+          id="language-dropdown">
+          <ul class="py-1" role="none">
+            <li>
+              <a href="#"
+                class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:text-white dark:text-gray-300 dark:hover:bg-gray-600"
+                role="menuitem">
+                <div class="inline-flex items-center">
+                  <svg aria-hidden="true" class="h-3.5 w-3.5 rounded-full mr-2" xmlns="http://www.w3.org/2000/svg"
+                    id="flag-icon-css-us" viewBox="0 0 512 512">
+                    <g fill-rule="evenodd">
+                      <g stroke-width="1pt">
+                        <path fill="#bd3d44"
+                          d="M0 0h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0z"
+                          transform="scale(3.9385)" />
+                        <path fill="#fff"
+                          d="M0 10h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0z"
+                          transform="scale(3.9385)" />
+                      </g>
+                      <path fill="#192f5d" d="M0 0h98.8v70H0z" transform="scale(3.9385)" />
+                      <path fill="#fff"
+                        d="M8.2 3l1 2.8H12L9.7 7.5l.9 2.7-2.4-1.7L6 10.2l.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7L74 8.5l-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 7.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 24.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 21.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 38.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 35.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 52.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 49.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 66.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 63.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9z"
+                        transform="scale(3.9385)" />
+                    </g>
+                  </svg>
+                  English (US)
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#"
+                class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:text-white dark:hover:bg-gray-600"
+                role="menuitem">
+                <div class="inline-flex items-center">
+                  <svg aria-hidden="true" class="h-3.5 w-3.5 rounded-full mr-2" xmlns="http://www.w3.org/2000/svg"
+                    id="flag-icon-css-de" viewBox="0 0 512 512">
+                    <path fill="#ffce00" d="M0 341.3h512V512H0z" />
+                    <path d="M0 0h512v170.7H0z" />
+                    <path fill="#d00" d="M0 170.7h512v170.6H0z" />
+                  </svg>
+                  Deutsch
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#"
+                class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:text-white dark:hover:bg-gray-600"
+                role="menuitem">
+                <div class="inline-flex items-center">
+                  <svg aria-hidden="true" class="h-3.5 w-3.5 rounded-full mr-2" xmlns="http://www.w3.org/2000/svg"
+                    id="flag-icon-css-it" viewBox="0 0 512 512">
+                    <g fill-rule="evenodd" stroke-width="1pt">
+                      <path fill="#fff" d="M0 0h512v512H0z" />
+                      <path fill="#009246" d="M0 0h170.7v512H0z" />
+                      <path fill="#ce2b37" d="M341.3 0H512v512H341.3z" />
+                    </g>
+                  </svg>
+                  Italiano
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#"
+                class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:text-white dark:text-gray-300 dark:hover:bg-gray-600"
+                role="menuitem">
+                <div class="inline-flex items-center">
+                  <svg aria-hidden="true" class="h-3.5 w-3.5 rounded-full mr-2" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" id="flag-icon-css-cn" viewBox="0 0 512 512">
+                    <defs>
+                      <path id="a" fill="#ffde00" d="M1-.3L-.7.8 0-1 .6.8-1-.3z" />
+                    </defs>
+                    <path fill="#de2910" d="M0 0h512v512H0z" />
+                    <use width="30" height="20" transform="matrix(76.8 0 0 76.8 128 128)" xlink:href="#a" />
+                    <use width="30" height="20" transform="rotate(-121 142.6 -47) scale(25.5827)" xlink:href="#a" />
+                    <use width="30" height="20" transform="rotate(-98.1 198 -82) scale(25.6)" xlink:href="#a" />
+                    <use width="30" height="20" transform="rotate(-74 272.4 -114) scale(25.6137)" xlink:href="#a" />
+                    <use width="30" height="20" transform="matrix(16 -19.968 19.968 16 256 230.4)" xlink:href="#a" />
+                  </svg>
+                  中文 (繁體)
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+    <!-- END Sidebar -->
+
+    <main class="p-4 pb-0 lg:ml-64 h-auto pt-20">
+      <section class="grid md:grid-cols-2 xl:grid-cols-4 gap-6 mb-4">
+        
+        <div class="flex items-center p-8  bg-[#FC8002]  shadow rounded-lg">
+          <div
+            class="inline-flex flex-shrink-0 items-center justify-center h-16 w-16 text-green-600 bg-green-100 rounded-full mr-6">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+              <path
+                d="M10.464 8.746c.227-.18.497-.311.786-.394v2.795a2.252 2.252 0 0 1-.786-.393c-.394-.313-.546-.681-.546-1.004 0-.323.152-.691.546-1.004ZM12.75 15.662v-2.824c.347.085.664.228.921.421.427.32.579.686.579.991 0 .305-.152.671-.579.991a2.534 2.534 0 0 1-.921.42Z" />
+              <path fill-rule="evenodd"
+                d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 6a.75.75 0 0 0-1.5 0v.816a3.836 3.836 0 0 0-1.72.756c-.712.566-1.112 1.35-1.112 2.178 0 .829.4 1.612 1.113 2.178.502.4 1.102.647 1.719.756v2.978a2.536 2.536 0 0 1-.921-.421l-.879-.66a.75.75 0 0 0-.9 1.2l.879.66c.533.4 1.169.645 1.821.75V18a.75.75 0 0 0 1.5 0v-.81a4.124 4.124 0 0 0 1.821-.749c.745-.559 1.179-1.344 1.179-2.191 0-.847-.434-1.632-1.179-2.191a4.122 4.122 0 0 0-1.821-.75V8.354c.29.082.559.213.786.393l.415.33a.75.75 0 0 0 .933-1.175l-.415-.33a3.836 3.836 0 0 0-1.719-.755V6Z"
+                clip-rule="evenodd" />
+            </svg>
+          </div>
+          <div>
+            <span class="block text-white text-2xl font-bold">250,000</span>
+            <span class="inline-block text-xl text-white font-semibold">(+32%)</span>
+            <span class="block text-white">Total Earnings</span>
+          </div>
+        </div>
+        <div class="flex items-center p-8 bg-[#27272a]  shadow rounded-lg">
+          <div
+            class="inline-flex flex-shrink-0 items-center justify-center h-16 w-16 text-purple-600 bg-purple-100 rounded-full mr-6">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+              <path fill-rule="evenodd"
+                d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z"
+                clip-rule="evenodd" />
+            </svg>
+          </div>
+          <div>
+            <span class="block text-2xl font-bold text-white">1600</span>
+            <span class="block text-white">Completed</span>
+          </div>
+        </div>
+        <div class="flex items-center p-8 bg-[#27272a] shadow rounded-lg">
+          <div
+            class="inline-flex flex-shrink-0 items-center justify-center h-16 w-16 text-red-600 bg-red-100 rounded-full mr-6">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+              <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm-1.72 6.97a.75.75 0 1 0-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 1 0 1.06 1.06L12 13.06l1.72 1.72a.75.75 0 1 0 1.06-1.06L13.06 12l1.72-1.72a.75.75 0 1 0-1.06-1.06L12 10.94l-1.72-1.72Z" clip-rule="evenodd" />
+            </svg>
+            
+
+          </div>
+          <div>
+            <span class="inline-block text-2xl font-bold text-white">25</span>
+            <span class="inline-block text-xl text-white font-semibold"></span>
+            <span class="block text-white">Cancelled</span>
+          </div>
+        </div>
+        <div class="flex items-center p-8 bg-[#27272a] shadow rounded-lg">
+          <div
+            class="inline-flex flex-shrink-0 items-center justify-center h-16 w-16 text-black bg-blue-100 rounded-full mr-6">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+              <path d="M11.625 16.5a1.875 1.875 0 1 0 0-3.75 1.875 1.875 0 0 0 0 3.75Z" />
+              <path fill-rule="evenodd" d="M5.625 1.5H9a3.75 3.75 0 0 1 3.75 3.75v1.875c0 1.036.84 1.875 1.875 1.875H16.5a3.75 3.75 0 0 1 3.75 3.75v7.875c0 1.035-.84 1.875-1.875 1.875H5.625a1.875 1.875 0 0 1-1.875-1.875V3.375c0-1.036.84-1.875 1.875-1.875Zm6 16.5c.66 0 1.277-.19 1.797-.518l1.048 1.048a.75.75 0 0 0 1.06-1.06l-1.047-1.048A3.375 3.375 0 1 0 11.625 18Z" clip-rule="evenodd" />
+              <path d="M14.25 5.25a5.23 5.23 0 0 0-1.279-3.434 9.768 9.768 0 0 1 6.963 6.963A5.23 5.23 0 0 0 16.5 7.5h-1.875a.375.375 0 0 1-.375-.375V5.25Z" />
+            </svg>
+            
+          </div>
+          <div>
+            <span class="block text-2xl font-bold text-white">3</span>
+            <span class="block text-white">In Review</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Transactions -->
+      <div class="p-4 bg-white border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 sm:p-6 dark:bg-gray-800">
+        <!-- Card header -->
+        <div class="items-center justify-between lg:flex">
+          <div class="mb-4 lg:mb-0">
+            <h3 class="mb-2 text-xl font-bold text-gray-900 dark:text-white">Transactions</h3>
+            <span class="text-base font-normal text-gray-500 dark:text-gray-400">This is a list of latest transactions</span>
+          </div>
+          <div class="items-center sm:flex">
+            <div class="flex items-center">
+              <button id="dropdownDefault1" data-dropdown-toggle="dropdown1"
+                class="mb-4 sm:mb-0 mr-4 inline-flex items-center text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-4 py-2.5 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+                type="button">
+                Filter by status
+                <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <!-- Dropdown menu -->
+              <div id="dropdown1" class="z-10 hidden w-56 p-3 bg-white rounded-lg shadow dark:bg-gray-700">
+                <h6 class="mb-3 text-sm font-medium text-gray-900 dark:text-white">
+                  Category
+                </h6>
+                <ul class="space-y-2 text-sm" aria-labelledby="dropdownDefault1">
+                  <li class="flex items-center">
+                    <input id="apple" type="checkbox" value="" class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" />
+            
+                    <label for="apple" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100">
+                      Completed (56)
+                    </label>
+                  </li>
+            
+                  <li class="flex items-center">
+                    <input id="fitbit" type="checkbox" value="" checked class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" />
+            
+                    <label for="fitbit" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100">
+                      Cancelled (56)
+                    </label>
+                  </li>
+            
+                  <li class="flex items-center">
+                    <input id="dell" type="checkbox" value="" class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" />
+            
+                    <label for="dell" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100">
+                      In progress (56)
+                    </label>
+                  </li>
+            
+                  <li class="flex items-center">
+                    <input id="asus" type="checkbox" value="" checked class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" />
+            
+                    <label for="asus" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100">
+                      In review (97)
+                    </label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div date-rangepicker class="flex items-center space-x-4">
+              <div class="relative">
+                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                  <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M5.25 12a.75.75 0 01.75-.75h.01a.75.75 0 01.75.75v.01a.75.75 0 01-.75.75H6a.75.75 0 01-.75-.75V12zM6 13.25a.75.75 0 00-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 00.75-.75V14a.75.75 0 00-.75-.75H6zM7.25 12a.75.75 0 01.75-.75h.01a.75.75 0 01.75.75v.01a.75.75 0 01-.75.75H8a.75.75 0 01-.75-.75V12zM8 13.25a.75.75 0 00-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 00.75-.75V14a.75.75 0 00-.75-.75H8zM9.25 10a.75.75 0 01.75-.75h.01a.75.75 0 01.75.75v.01a.75.75 0 01-.75.75H10a.75.75 0 01-.75-.75V10zM10 11.25a.75.75 0 00-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 00.75-.75V12a.75.75 0 00-.75-.75H10zM9.25 14a.75.75 0 01.75-.75h.01a.75.75 0 01.75.75v.01a.75.75 0 01-.75.75H10a.75.75 0 01-.75-.75V14zM12 9.25a.75.75 0 00-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 00.75-.75V10a.75.75 0 00-.75-.75H12zM11.25 12a.75.75 0 01.75-.75h.01a.75.75 0 01.75.75v.01a.75.75 0 01-.75.75H12a.75.75 0 01-.75-.75V12zM12 13.25a.75.75 0 00-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 00.75-.75V14a.75.75 0 00-.75-.75H12zM13.25 10a.75.75 0 01.75-.75h.01a.75.75 0 01.75.75v.01a.75.75 0 01-.75.75H14a.75.75 0 01-.75-.75V10zM14 11.25a.75.75 0 00-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 00.75-.75V12a.75.75 0 00-.75-.75H14z"></path>
+                    <path clip-rule="evenodd" fill-rule="evenodd" d="M5.75 2a.75.75 0 01.75.75V4h7V2.75a.75.75 0 011.5 0V4h.25A2.75 2.75 0 0118 6.75v8.5A2.75 2.75 0 0115.25 18H4.75A2.75 2.75 0 012 15.25v-8.5A2.75 2.75 0 014.75 4H5V2.75A.75.75 0 015.75 2zm-1 5.5c-.69 0-1.25.56-1.25 1.25v6.5c0 .69.56 1.25 1.25 1.25h10.5c.69 0 1.25-.56 1.25-1.25v-6.5c0-.69-.56-1.25-1.25-1.25H4.75z"></path>
+                  </svg>
+                </div>
+                <input name="start" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="From">
+              </div>
+              <div class="relative">
+                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                  <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M5.25 12a.75.75 0 01.75-.75h.01a.75.75 0 01.75.75v.01a.75.75 0 01-.75.75H6a.75.75 0 01-.75-.75V12zM6 13.25a.75.75 0 00-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 00.75-.75V14a.75.75 0 00-.75-.75H6zM7.25 12a.75.75 0 01.75-.75h.01a.75.75 0 01.75.75v.01a.75.75 0 01-.75.75H8a.75.75 0 01-.75-.75V12zM8 13.25a.75.75 0 00-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 00.75-.75V14a.75.75 0 00-.75-.75H8zM9.25 10a.75.75 0 01.75-.75h.01a.75.75 0 01.75.75v.01a.75.75 0 01-.75.75H10a.75.75 0 01-.75-.75V10zM10 11.25a.75.75 0 00-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 00.75-.75V12a.75.75 0 00-.75-.75H10zM9.25 14a.75.75 0 01.75-.75h.01a.75.75 0 01.75.75v.01a.75.75 0 01-.75.75H10a.75.75 0 01-.75-.75V14zM12 9.25a.75.75 0 00-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 00.75-.75V10a.75.75 0 00-.75-.75H12zM11.25 12a.75.75 0 01.75-.75h.01a.75.75 0 01.75.75v.01a.75.75 0 01-.75.75H12a.75.75 0 01-.75-.75V12zM12 13.25a.75.75 0 00-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 00.75-.75V14a.75.75 0 00-.75-.75H12zM13.25 10a.75.75 0 01.75-.75h.01a.75.75 0 01.75.75v.01a.75.75 0 01-.75.75H14a.75.75 0 01-.75-.75V10zM14 11.25a.75.75 0 00-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 00.75-.75V12a.75.75 0 00-.75-.75H14z"></path>
+                    <path clip-rule="evenodd" fill-rule="evenodd" d="M5.75 2a.75.75 0 01.75.75V4h7V2.75a.75.75 0 011.5 0V4h.25A2.75 2.75 0 0118 6.75v8.5A2.75 2.75 0 0115.25 18H4.75A2.75 2.75 0 012 15.25v-8.5A2.75 2.75 0 014.75 4H5V2.75A.75.75 0 015.75 2zm-1 5.5c-.69 0-1.25.56-1.25 1.25v6.5c0 .69.56 1.25 1.25 1.25h10.5c.69 0 1.25-.56 1.25-1.25v-6.5c0-.69-.56-1.25-1.25-1.25H4.75z"></path>
+                  </svg>
+                </div>
+                <input name="end" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="To">
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Table -->
+        <div class="flex flex-col mt-6">
+          <div class="overflow-x-auto rounded-lg">
+            <div class="inline-block min-w-full align-middle">
+              <div class="overflow-hidden shadow sm:rounded-lg">
+                <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-600">
+                  <thead class="bg-gray-50 dark:bg-gray-700">
+                    <tr>
+                      <th scope="col" class="p-4 text-xs font-medium tracking-wider text-left text-gray-500 uppercase dark:text-white">
+                        Transaction
+                      </th>
+                      <th scope="col" class="p-4 text-xs font-medium tracking-wider text-left text-gray-500 uppercase dark:text-white">
+                        Date & Time
+                      </th>
+                      <th scope="col" class="p-4 text-xs font-medium tracking-wider text-left text-gray-500 uppercase dark:text-white">
+                        Amount
+                      </th>
+                      <th scope="col" class="p-4 text-xs font-medium tracking-wider text-left text-gray-500 uppercase dark:text-white">
+                        Reference number
+                      </th>
+                      <th scope="col" class="p-4 text-xs font-medium tracking-wider text-left text-gray-500 uppercase dark:text-white">
+                        Payment method
+                      </th>
+                      <th scope="col" class="p-4 text-xs font-medium tracking-wider text-left text-gray-500 uppercase dark:text-white">
+                        Status
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="bg-white dark:bg-gray-800">
+                    <tr>
+                      <td class="p-4 text-sm font-normal text-gray-900 whitespace-nowrap dark:text-white">
+                        Payment from <span class="font-semibold">John Doe</span>
+                      </td>
+                      <td class="p-4 text-sm font-normal text-gray-500 whitespace-nowrap dark:text-gray-400">
+                        Jan 1, 2025
+                      </td>
+                      <td class="p-4 text-sm font-semibold text-gray-900 whitespace-nowrap dark:text-white">
+                        $980
+                      </td>
+                      <td class="p-4 text-sm font-normal text-gray-500 whitespace-nowrap dark:text-gray-400">
+                        0047568936
+                      </td>
+                      <td class="inline-flex items-center p-4 space-x-2 text-sm font-normal text-gray-500 whitespace-nowrap dark:text-gray-400">
+                        <svg class="w-5 h-5" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 135.33 114.13"><title>GCash logo - Brandlogos.net</title><path d="M301.23,384.14a64.85,64.85,0,0,1-7,29.49,6.56,6.56,0,0,0,2.33,8.54h0a6.53,6.53,0,0,0,9-2q.16-.25.29-.51a78.4,78.4,0,0,0,0-70.9,6.54,6.54,0,0,0-8.81-2.81l-.5.29h0a6.56,6.56,0,0,0-2.33,8.53A64.88,64.88,0,0,1,301.23,384.14Z" transform="translate(-179 -327.08)" style="fill:#51c1ff"/><path d="M280.06,384.14a43.85,43.85,0,0,1-4,18.4,6.55,6.55,0,0,0,2.46,8.28h0A6.56,6.56,0,0,0,288,408a57.4,57.4,0,0,0,0-47.68,6.56,6.56,0,0,0-9.45-2.82h0a6.55,6.55,0,0,0-2.46,8.28A43.85,43.85,0,0,1,280.06,384.14Z" transform="translate(-179 -327.08)" style="fill:#51c1ff"/><path d="M236.06,428.13a44,44,0,1,1,26.87-78.85,6.54,6.54,0,0,0,8.63-.53h0a6.53,6.53,0,0,0-.63-9.79,57.08,57.08,0,1,0,.09,90.3,6.44,6.44,0,0,0,.61-9.63l-.14-.14A6.45,6.45,0,0,0,263,419,43.82,43.82,0,0,1,236.06,428.13Z" transform="translate(-179 -327.08)" style="fill:#007cff"/><path d="M271.15,379.35a6.75,6.75,0,0,0-4.76-2h0l-31.35,0h0a6.77,6.77,0,1,0,0,13.53h23.59a23.52,23.52,0,1,1-10-26.75,6.78,6.78,0,0,0,8.4-1h0a6.75,6.75,0,0,0-1.14-10.45,37.36,37.36,0,0,0-27.8-4.88,36.55,36.55,0,0,0-28.24,28.48,37.08,37.08,0,1,0,73.34,7.78A6.78,6.78,0,0,0,271.15,379.35Z" transform="translate(-179 -327.08)" style="fill:#002cb8"/></svg>
+                        <span>••• 475</span>
+                      </td>
+                      <td class="p-4 whitespace-nowrap">
+                        <span
+                          class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-green-400 border border-green-100 dark:border-green-500">Completed</span>
+                      </td>
+                    </tr>
+                    <tr class="bg-gray-50 dark:bg-gray-700">
+                      <td class="p-4 text-sm font-normal text-gray-900 whitespace-nowrap dark:text-white">
+                        Payment refund to <span class="font-semibold">#034082</span>
+                      </td>
+                      <td class="p-4 text-sm font-normal text-gray-500 whitespace-nowrap dark:text-gray-400">
+                        Jan 1, 2025
+                      </td>
+                      <td class="p-4 text-sm font-semibold text-gray-900 whitespace-nowrap dark:text-white">
+                        -$500
+                      </td>
+                      <td class="p-4 text-sm font-normal text-gray-500 whitespace-nowrap dark:text-gray-400">
+                        0002945020
+                      </td>
+                      <td class="inline-flex items-center p-4 space-x-2 text-sm font-normal text-gray-500 whitespace-nowrap dark:text-gray-400">
+                        <svg class="w-5 h-5" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 135.33 114.13"><title>GCash logo - Brandlogos.net</title><path d="M301.23,384.14a64.85,64.85,0,0,1-7,29.49,6.56,6.56,0,0,0,2.33,8.54h0a6.53,6.53,0,0,0,9-2q.16-.25.29-.51a78.4,78.4,0,0,0,0-70.9,6.54,6.54,0,0,0-8.81-2.81l-.5.29h0a6.56,6.56,0,0,0-2.33,8.53A64.88,64.88,0,0,1,301.23,384.14Z" transform="translate(-179 -327.08)" style="fill:#51c1ff"/><path d="M280.06,384.14a43.85,43.85,0,0,1-4,18.4,6.55,6.55,0,0,0,2.46,8.28h0A6.56,6.56,0,0,0,288,408a57.4,57.4,0,0,0,0-47.68,6.56,6.56,0,0,0-9.45-2.82h0a6.55,6.55,0,0,0-2.46,8.28A43.85,43.85,0,0,1,280.06,384.14Z" transform="translate(-179 -327.08)" style="fill:#51c1ff"/><path d="M236.06,428.13a44,44,0,1,1,26.87-78.85,6.54,6.54,0,0,0,8.63-.53h0a6.53,6.53,0,0,0-.63-9.79,57.08,57.08,0,1,0,.09,90.3,6.44,6.44,0,0,0,.61-9.63l-.14-.14A6.45,6.45,0,0,0,263,419,43.82,43.82,0,0,1,236.06,428.13Z" transform="translate(-179 -327.08)" style="fill:#007cff"/><path d="M271.15,379.35a6.75,6.75,0,0,0-4.76-2h0l-31.35,0h0a6.77,6.77,0,1,0,0,13.53h23.59a23.52,23.52,0,1,1-10-26.75,6.78,6.78,0,0,0,8.4-1h0a6.75,6.75,0,0,0-1.14-10.45,37.36,37.36,0,0,0-27.8-4.88,36.55,36.55,0,0,0-28.24,28.48,37.08,37.08,0,1,0,73.34,7.78A6.78,6.78,0,0,0,271.15,379.35Z" transform="translate(-179 -327.08)" style="fill:#002cb8"/></svg>
+                        <span>••• 924</span>
+                      </td>
+                      <td class="p-4 whitespace-nowrap">
+                        <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-green-400 border border-green-100 dark:border-green-500">Completed</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="p-4 text-sm font-normal text-gray-900 whitespace-nowrap dark:text-white">
+                        Payment failed from <span class="font-semibold">#177013</span>
+                      </td>
+                      <td class="p-4 text-sm font-normal text-gray-500 whitespace-nowrap dark:text-gray-400">
+                        Apr 18 ,2025
+                      </td>
+                      <td class="p-4 text-sm font-semibold text-gray-900 whitespace-nowrap dark:text-white">
+                        $234
+                      </td>
+                      <td class="p-4 text-sm font-normal text-gray-500 whitespace-nowrap dark:text-gray-400">
+                        0088568934
+                      </td>
+                      <td class="inline-flex items-center p-4 space-x-2 text-sm font-normal text-gray-500 whitespace-nowrap dark:text-gray-400">
+                        <svg class="w-5 h-5" viewBox="-3.5 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <title>Paypal-color</title>
+                          <desc>Created with Sketch.</desc>
+                          <defs>
+                      </defs>
+                          <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                              <g id="Color-" transform="translate(-804.000000, -660.000000)" fill="#022B87">
+                                  <path d="M838.91167,663.619443 C836.67088,661.085983 832.621734,660 827.440097,660 L812.404732,660 C811.344818,660 810.443663,660.764988 810.277343,661.801472 L804.016136,701.193856 C803.892151,701.970844 804.498465,702.674333 805.292267,702.674333 L814.574458,702.674333 L816.905967,688.004562 L816.833391,688.463555 C816.999712,687.427071 817.894818,686.662083 818.95322,686.662083 L823.363735,686.662083 C832.030541,686.662083 838.814901,683.170138 840.797138,673.069296 C840.856106,672.7693 840.951363,672.194809 840.951363,672.194809 C841.513828,668.456868 840.946827,665.920407 838.91167,663.619443 Z M843.301017,674.10803 C841.144899,684.052874 834.27133,689.316292 823.363735,689.316292 L819.408334,689.316292 L816.458414,708 L822.873846,708 C823.800704,708 824.588458,707.33101 824.733611,706.423525 L824.809211,706.027531 L826.284927,696.754676 L826.380183,696.243184 C826.523823,695.335698 827.313089,694.666708 828.238435,694.666708 L829.410238,694.666708 C836.989913,694.666708 842.92604,691.611256 844.660308,682.776394 C845.35583,679.23045 845.021677,676.257496 843.301017,674.10803 Z" id="Paypal">
+                      
+                      </path>
+                              </g>
+                          </g>
+                      </svg>
+                        <span>••• 826</span>
+                      </td>
+                      <td class="p-4 whitespace-nowrap">
+                        <span
+                          class="bg-red-100 text-red-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-md border border-red-100 dark:border-red-400 dark:bg-gray-700 dark:text-red-400">Cancelled</span>
+                      </td>
+                    </tr>
+                    <tr class="bg-gray-50 dark:bg-gray-700">
+                      <td class="p-4 text-sm font-normal text-gray-900 whitespace-nowrap dark:text-white">
+                        Payment from <span class="font-semibold">Minji Kim</span>
+                      </td>
+                      <td class="p-4 text-sm font-normal text-gray-500 whitespace-nowrap dark:text-gray-400">
+                        Jan 2, 2025
+                      </td>
+                      <td class="p-4 text-sm font-semibold text-gray-900 whitespace-nowrap dark:text-white">
+                        $5000
+                      </td>
+                      <td class="p-4 text-sm font-normal text-gray-500 whitespace-nowrap dark:text-gray-400">
+                        0018568911
+                      </td>
+                      <td class="inline-flex items-center p-4 space-x-2 text-sm font-normal text-gray-500 whitespace-nowrap dark:text-gray-400">
+                        <svg class="w-5 h-5" viewBox="-3.5 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <title>Paypal-color</title>
+                          <desc>Created with Sketch.</desc>
+                          <defs>
+                      </defs>
+                          <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                              <g id="Color-" transform="translate(-804.000000, -660.000000)" fill="#022B87">
+                                  <path d="M838.91167,663.619443 C836.67088,661.085983 832.621734,660 827.440097,660 L812.404732,660 C811.344818,660 810.443663,660.764988 810.277343,661.801472 L804.016136,701.193856 C803.892151,701.970844 804.498465,702.674333 805.292267,702.674333 L814.574458,702.674333 L816.905967,688.004562 L816.833391,688.463555 C816.999712,687.427071 817.894818,686.662083 818.95322,686.662083 L823.363735,686.662083 C832.030541,686.662083 838.814901,683.170138 840.797138,673.069296 C840.856106,672.7693 840.951363,672.194809 840.951363,672.194809 C841.513828,668.456868 840.946827,665.920407 838.91167,663.619443 Z M843.301017,674.10803 C841.144899,684.052874 834.27133,689.316292 823.363735,689.316292 L819.408334,689.316292 L816.458414,708 L822.873846,708 C823.800704,708 824.588458,707.33101 824.733611,706.423525 L824.809211,706.027531 L826.284927,696.754676 L826.380183,696.243184 C826.523823,695.335698 827.313089,694.666708 828.238435,694.666708 L829.410238,694.666708 C836.989913,694.666708 842.92604,691.611256 844.660308,682.776394 C845.35583,679.23045 845.021677,676.257496 843.301017,674.10803 Z" id="Paypal">
+                      
+                      </path>
+                              </g>
+                          </g>
+                      </svg>
+                        <span>••• 634</span>
+                      </td>
+                      <td class="p-4 whitespace-nowrap">
+                        <span class="bg-purple-100 text-purple-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-md border border-purple-100 dark:bg-gray-700 dark:border-purple-500 dark:text-purple-400">In progress</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="p-4 text-sm font-normal text-gray-900 whitespace-nowrap dark:text-white">
+                        Payment from <span class="font-semibold">Hanni Pham</span>
+                      </td>
+                      <td class="p-4 text-sm font-normal text-gray-500 whitespace-nowrap dark:text-gray-400">
+                        Jan 2, 2025
+                      </td>
+                      <td class="p-4 text-sm font-semibold text-gray-900 whitespace-nowrap dark:text-white">
+                        $1000
+                      </td>
+                      <td class="p-4 text-sm font-normal text-gray-500 whitespace-nowrap dark:text-gray-400">
+                        0028573619
+                      </td>
+                      <td class="inline-flex items-center p-4 space-x-2 text-sm font-normal text-gray-500 whitespace-nowrap dark:text-gray-400">
+                        <svg class="w-5 h-5" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 135.33 114.13"><title>GCash logo - Brandlogos.net</title><path d="M301.23,384.14a64.85,64.85,0,0,1-7,29.49,6.56,6.56,0,0,0,2.33,8.54h0a6.53,6.53,0,0,0,9-2q.16-.25.29-.51a78.4,78.4,0,0,0,0-70.9,6.54,6.54,0,0,0-8.81-2.81l-.5.29h0a6.56,6.56,0,0,0-2.33,8.53A64.88,64.88,0,0,1,301.23,384.14Z" transform="translate(-179 -327.08)" style="fill:#51c1ff"/><path d="M280.06,384.14a43.85,43.85,0,0,1-4,18.4,6.55,6.55,0,0,0,2.46,8.28h0A6.56,6.56,0,0,0,288,408a57.4,57.4,0,0,0,0-47.68,6.56,6.56,0,0,0-9.45-2.82h0a6.55,6.55,0,0,0-2.46,8.28A43.85,43.85,0,0,1,280.06,384.14Z" transform="translate(-179 -327.08)" style="fill:#51c1ff"/><path d="M236.06,428.13a44,44,0,1,1,26.87-78.85,6.54,6.54,0,0,0,8.63-.53h0a6.53,6.53,0,0,0-.63-9.79,57.08,57.08,0,1,0,.09,90.3,6.44,6.44,0,0,0,.61-9.63l-.14-.14A6.45,6.45,0,0,0,263,419,43.82,43.82,0,0,1,236.06,428.13Z" transform="translate(-179 -327.08)" style="fill:#007cff"/><path d="M271.15,379.35a6.75,6.75,0,0,0-4.76-2h0l-31.35,0h0a6.77,6.77,0,1,0,0,13.53h23.59a23.52,23.52,0,1,1-10-26.75,6.78,6.78,0,0,0,8.4-1h0a6.75,6.75,0,0,0-1.14-10.45,37.36,37.36,0,0,0-27.8-4.88,36.55,36.55,0,0,0-28.24,28.48,37.08,37.08,0,1,0,73.34,7.78A6.78,6.78,0,0,0,271.15,379.35Z" transform="translate(-179 -327.08)" style="fill:#002cb8"/></svg>
+                        <span>••• 163</span>
+                      </td>
+                      <td class="p-4 whitespace-nowrap">
+                        <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-green-400 border border-green-100 dark:border-green-500">Completed</span>
+                      </td>
+                    </tr>
+                    <tr class="bg-gray-50 dark:bg-gray-700">
+                      <td class="p-4 text-sm font-normal text-gray-900 whitespace-nowrap dark:text-white">
+                        Refund to <span class="font-semibold">Hyein Lee</span>
+                      </td>
+                      <td class="p-4 text-sm font-normal text-gray-500 whitespace-nowrap dark:text-gray-400">
+                        May 15, 2025
+                      </td>
+                      <td class="p-4 text-sm font-semibold text-gray-900 whitespace-nowrap dark:text-white">
+                        -$560
+                      </td>
+                      <td class="p-4 text-sm font-normal text-gray-500 whitespace-nowrap dark:text-gray-400">
+                        0002975223
+                      </td>
+                      <td class="inline-flex items-center p-4 space-x-2 text-sm font-normal text-gray-500 whitespace-nowrap dark:text-gray-400">
+                        <svg class="w-5 h-5" viewBox="-3.5 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <title>Paypal-color</title>
+                          <desc>Created with Sketch.</desc>
+                          <defs>
+                      </defs>
+                          <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                              <g id="Color-" transform="translate(-804.000000, -660.000000)" fill="#022B87">
+                                  <path d="M838.91167,663.619443 C836.67088,661.085983 832.621734,660 827.440097,660 L812.404732,660 C811.344818,660 810.443663,660.764988 810.277343,661.801472 L804.016136,701.193856 C803.892151,701.970844 804.498465,702.674333 805.292267,702.674333 L814.574458,702.674333 L816.905967,688.004562 L816.833391,688.463555 C816.999712,687.427071 817.894818,686.662083 818.95322,686.662083 L823.363735,686.662083 C832.030541,686.662083 838.814901,683.170138 840.797138,673.069296 C840.856106,672.7693 840.951363,672.194809 840.951363,672.194809 C841.513828,668.456868 840.946827,665.920407 838.91167,663.619443 Z M843.301017,674.10803 C841.144899,684.052874 834.27133,689.316292 823.363735,689.316292 L819.408334,689.316292 L816.458414,708 L822.873846,708 C823.800704,708 824.588458,707.33101 824.733611,706.423525 L824.809211,706.027531 L826.284927,696.754676 L826.380183,696.243184 C826.523823,695.335698 827.313089,694.666708 828.238435,694.666708 L829.410238,694.666708 C836.989913,694.666708 842.92604,691.611256 844.660308,682.776394 C845.35583,679.23045 845.021677,676.257496 843.301017,674.10803 Z" id="Paypal">
+                      
+                      </path>
+                              </g>
+                          </g>
+                      </svg>
+                        <span>••• 443</span>
+                      </td>
+                      <td class="p-4 whitespace-nowrap">
+                        <span class="bg-orange-100 text-orange-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-md border border-orange-100 dark:bg-gray-700 dark:border-orange-300 dark:text-orange-300">In review</span>
+                      </td>
+                    </tr>
+  
+                    
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Card Footer -->
+        <div class="flex items-center justify-between pt-3 sm:pt-6">
+          <div>
+            <button class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-500 rounded-lg hover:text-gray-900 dark:text-gray-400 dark:hover:text-white" type="button" data-dropdown-toggle="transactions-dropdown">Last 7 days <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+            <!-- Dropdown menu -->
+            <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600" id="transactions-dropdown">
+                <div class="px-4 py-3" role="none">
+                  <p class="text-sm font-medium text-gray-900 truncate dark:text-white" role="none">
+                    Sep 16, 2021 - Sep 22, 2021
+                  </p>
+                </div>
+                <ul class="py-1" role="none">
+                  <li>
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Yesterday</a>
+                  </li>
+                  <li>
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Today</a>
+                  </li>
+                  <li>
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Last 7 days</a>
+                  </li>
+                  <li>
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Last 30 days</a>
+                  </li>
+                  <li>
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Last 90 days</a>
+                  </li>
+                </ul>
+                <div class="py-1" role="none">
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Custom...</a>
+                </div>
+            </div>
+          </div>
+          <div class="flex-shrink-0 sticky">
+            <a href="#" class="inline-flex items-center p-2 text-xs font-medium uppercase rounded-lg text-primary-700 sm:text-sm hover:bg-gray-100 dark:text-primary-500 dark:hover:bg-gray-700">
+             Download Report
+              <svg class="w-4 h-4 ml-1 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </a>
+          </div>
+          
+        </div>
+      </div>
+
+        <!-- START Footer -->
+      <footer
+      class="p-4 my-6 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 xl:p-8 dark:bg-gray-800">
+      <ul class="flex flex-wrap items-center mb-6 space-y-1 md:mb-0">
+        <li><a href="#"
+            class="mr-4 text-sm font-normal text-gray-500 hover:underline md:mr-6 dark:text-gray-400">Terms and
+            conditions</a></li>
+        <li><a href="#"
+            class="mr-4 text-sm font-normal text-gray-500 hover:underline md:mr-6 dark:text-gray-400">Privacy
+            Policy</a></li>
+        <li><a href="#"
+            class="mr-4 text-sm font-normal text-gray-500 hover:underline md:mr-6 dark:text-gray-400">Licensing</a>
+        </li>
+        <li><a href="#"
+            class="mr-4 text-sm font-normal text-gray-500 hover:underline md:mr-6 dark:text-gray-400">Cookie
+            Policy</a></li>
+        <li><a href="#" class="text-sm font-normal text-gray-500 hover:underline dark:text-gray-400">Contact</a></li>
+      </ul>
+      <div class="flex space-x-6 sm:justify-center">
+        <a href="#" class="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill-rule="evenodd"
+              d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+              clip-rule="evenodd" />
+          </svg>
+        </a>
+        <a href="#" class="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill-rule="evenodd"
+              d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+              clip-rule="evenodd" />
+          </svg>
+        </a>
+        <a href="#" class="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+          </svg>
+        </a>
+        <a href="#" class="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill-rule="evenodd"
+              d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+              clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+    </footer>
+    <p class="my-10 text-sm text-center text-gray-500">
+      &copy; 2024-2025 <a href="https://parfly.netlify.app/" class="hover:underline"
+        target="_blank">Parfly.netlify.com</a>. All rights reserved.
+    </p>
+    <!-- END FOOTER -->
+
+      
+
+
+    </main>
+  </div>
+ 
+
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+</body>
+</html>
+
+      
