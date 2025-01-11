@@ -614,16 +614,16 @@
               <h1 class="text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white">All deliveries</h1>
             </div>
             <div class="items-center justify-between block sm:flex md:divide-x md:divide-gray-100 dark:divide-gray-700">
-              <div class="flex items-center mb-4 sm:mb-0">
+              <div class="flex  mb-4 sm:mb-0 flex-col sm:flex-row hidden sm:flex" >
                 <form class="sm:pr-3" action="#" method="GET">
                   <label for="products-search" class="sr-only">Search</label>
-                  <div class="relative w-48 mt-1 sm:w-64 xl:w-96">
+                  <div class="relative w-full mt-1 sm:w-64 xl:w-96">
                     <input type="text" name="email" id="products-search"
                       class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-[#FC8002] focus:border-[#FC8002] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                       placeholder="Search for deliveries">
                   </div>
                 </form>
-                <div class="flex items-center w-full sm:justify-end">
+                <div class="flex items-center w-full mt-5 sm:mt-0 hidden sm:flex">
                   <div class="flex pl-2 space-x-1">
                     <a href="#"
                       class="inline-flex justify-center p-1 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
@@ -661,7 +661,7 @@
                 </div>
               </div>
               <button id="createProductButton"
-                class="text-white bg-[#FC8002] hover:bg-[#e67300] focus:ring-4 focus:ring-[#fc7f0281] font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800"
+                class="text-white bg-[#FC8002] hover:bg-[#e67300] focus:ring-4 focus:ring-[#fc7f0281] font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800 w-full sm:w-auto"
                 type="button" data-drawer-target="drawer-create-product-default"
                 data-drawer-show="drawer-create-product-default" aria-controls="drawer-create-product-default"
                 data-drawer-placement="right">
@@ -1266,7 +1266,7 @@
             </div>
             
             <div class="h-28 w-1"></div>
-            <div class="fixed bottom-0 right-0 flex justify-center p-4 pb-4 space-x-4 dark:bg-gray-800 w-80 border-2 border-gray-950 bg-white"> 
+            <div class="fixed bottom-0 right-0 flex justify-center p-4 pb-4 space-x-4 dark:bg-gray-800 w-80 border-t-2 border-gray-300 bg-white"> 
               <button type="submit"
                 class="text-white w-full justify-center bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 ">
                 Add Delivery
