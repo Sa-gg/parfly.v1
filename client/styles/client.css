@@ -71,6 +71,12 @@ body {
 
 .navbar.navbar-collapse ul:last-of-type .nav-item{
     margin-right: 0;
+    
+    
+}
+
+.navbar.navbar-collapse ul:last-of-type > div{
+    gap: 1rem;
 }
 
 .navbar.navbar-collapse ul:last-of-type > .nav-item:first-child{
@@ -83,10 +89,12 @@ body {
     align-items: center;
     justify-content: center;
     color: white;
+   
 }
 
 .navbar ul:last-of-type .nav-item .nav-link {
     text-wrap: nowrap;
+    
 }
 
 .navbar .nav-item .fa-globe {
