@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build:css": "npx tailwindcss -i ./admin/src/assets/css/styles.css -o ./admin/dist/output.css --watch",
-    "build": "npm run build:css && <your-build-command>"
+  "build:admin": "npx tailwindcss -c ./admin/tailwind.config.js -i ./admin/src/assets/css/styles.css -o ./admin/dist/output.css --watch",
+  "build:client": "npx tailwindcss -c ./client/tailwind.config.js -i ./client/src/assets/css/styles.css -o ./client/dist/output.css --watch",
+  "build:all": "npm run build:admin & npm run build:client"
   },
   "keywords": [],
   "author": "",

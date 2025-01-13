@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+/* NAVBAR */
+#navbar {
+    position: fixed;
+    width: 100%;
+    transition: background-color .3s ease;
+    z-index: 999;
+}
+
+#features > div {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+#features > div:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); 
+  }
+
+
+
+
+/* HOME  */
+#home {
+    background: linear-gradient(rgba(0, 0, 0, 0.333), rgba(0, 0, 0, 0.333)), 
+                url(/client/src/assets/img/bg.jpg);
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    
+}
+
+.home-container {
+    padding-top: 15%;
+    padding-inline: 10%;
+    color: white;
+    
+}
+
+.home-container h1 {
+    font-size: 5.5rem;
+    text-shadow: -1px 1px 0 #0000004d,
+                         1px 1px 0 #0000004d,
+                         1px -1px 0 #0000004d,
+                         -1px -1px 0 #0000004d;
+}
+
+.home-container p {
+    font-size: 1.2rem;
+    text-shadow: -1px 1px 0 #0000004d,
+                         1px px 0 #0000004d,
+                         1px -1px 0 #0000004d,
+                         -1px -1px 0 #0000004d;
+    margin-bottom: 2rem;
+}
+
+#book-btn {
+    background-color: rgba(252,128,2,255);
+    padding: .8rem 3rem;
+    border: none;
+    border-radius: 10px;
+    
+}
+
+@media screen and (max-width: 1393px) {
+
+    .home-container {
+        padding-top: 22%;
+    }
+
+    .home-container h1 {
+        font-size: 4rem;
+    }
+
+    .home-container p {
+        font-size: 1rem;
+    }
+
+    #book-btn {
+        background-color: rgba(252,128,2,255);
+        padding: .5rem 2rem;
+        border: none;
+    }
+}
+
+@media screen and (max-width: 985px) {
+    .home-container {
+        padding-top:30%;
+    }
+
+    .home-container h1 {
+        font-size: 3.5rem;
+    }
+
+    .home-container p {
+        font-size: 1rem;
+    }
+
+    #book-btn {
+        background-color: rgba(252,128,2,255);
+        padding: .5rem 2rem;
+        border: none;
+    }
+}
+
+@media screen and (max-width: 655px) {
+    .home-container {
+        padding-top:40%;
+    }
+
+    .home-container h1 {
+        font-size: 3.5rem;
+    }
+
+    .home-container p {
+        font-size: 1rem;
+    }
+
+    #book-btn {
+        background-color: rgba(252,128,2,255);
+        padding: .5rem 2rem;
+        border: none;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .home-container {
+        padding-top:45%;
+    }
+
+    .home-container h1 {
+        font-size: 3rem;
+    }
+
+    .home-container p {
+        font-size: .9rem;
+    }
+
+    #book-btn {
+        background-color: rgba(252,128,2,255);
+        padding: .5rem 2rem;
+        border: none;
+    }
+}
+
+
+
+#features div a img {
+    aspect-ratio: 643/360;
+    object-fit: cover;
+}
